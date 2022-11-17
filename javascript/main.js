@@ -1,14 +1,22 @@
-const offset = 0;
-const limit = 10;
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+const main = async () => {
+  const offset = 0;
+  const limit = 10;
+  const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+  const pokemonHTML = document.getElementById("pokemon_list");
+  let pokemonList;
+  try {
+    const response = await fetch(url);
+    const pokemonInfos = await response.json();
+    const pokemonList = pokemonInfos.results;
 
-fetch(url)
-  .then((response) => response.json())
-  .then((jsonBody) => jsonBody.results)
-  .then((pokemonList) => console.log(pokemonList))
-  .catch((error) => {
+    for (i = 0; i < pokemonList.length; i++) {
+      const pokemon = pokemonList[i];
+      const html = await pokemonToHTML(pokemon.name);
+      pokemonHTML.innerHTML += html;
+    }
+  } catch (error) {
     console.log(error);
-  })
-  .finally(() => {
-    console.log("Query Complete");
-  });
+  }
+};
+
+main();
