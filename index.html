@@ -33,8 +33,8 @@
     <div class="flex-container">
       <div class="flex-container_list">
         <div id="search">
-          <input placeholder="Pokémon name" />
-          <button id="search_button">Search</button>
+          <input id="search_bar" placeholder="Pokémon name" value=""/>
+          <button id="search_button" onclick="searchPokemon()">Search</button>
         </div>
         <div id="pokedex">
           <ol id="pokemon_list"></ol>
@@ -49,5 +49,6 @@
     <script src="./javascript/main.js"></script>
     <script src="./javascript/pokemonListToHTML.js"></script>
     <script src="./javascript/pokedexLoad.js"></script>
+    <script src="./javascript/pokemonSearch.js"></script>
   </body>
 </html>

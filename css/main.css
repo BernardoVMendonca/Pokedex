@@ -2,6 +2,12 @@
   font-family: "Roboto", "sans-serif";
   box-sizing: border-box;
 }
+#error {
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  color: rgb(58, 58, 58, 0.5);
+}
 
 #search {
   align-self: center;
@@ -14,6 +20,7 @@
   border-radius: 0.5em;
   border-color: rgb(58, 58, 58, 0.5);
 }
+
 #search_button {
   background-color: green;
   color: white;
@@ -23,10 +30,16 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
 #search_button:hover {
   background-color: rgb(0, 107, 0);
 }
 
+#clean_button {
+  background-color: white;
+  opacity: 0.5;
+  border: none;
+}
 #pokedex {
   overflow: auto;
 }

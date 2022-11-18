@@ -28,8 +28,9 @@ const pokemonTypeToHTML = (types) => {
 };
 
 const pokemonToHTML = async (pokemonName) => {
-  const data = await getPokemonInfo(pokemonName);
-  return `
+  try {
+    const data = await getPokemonInfo(pokemonName);
+    return `
       <li class="pokemon_card">
         <div class="name">${data.name}</div>
           ${pokemonNumberFormat(data.id)}
@@ -44,4 +45,8 @@ const pokemonToHTML = async (pokemonName) => {
         </div>
       </li>
       `;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };

@@ -1,7 +1,8 @@
 let offset = 0;
 
-const defOffset = () => {
-  offset += 10;
+const defOffset = (newOffset) => {
+  if (newOffset === undefined) offset += 10;
+  else offset = newOffset;
   return offset;
 };
 
