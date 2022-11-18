@@ -12,9 +12,11 @@ const getPokemonInfo = async (pokemonName) => {
 
 const pokemonNumberFormat = (number) => {
   let numberFormated = `#000${number}`;
-  if (number > 9) numberFormated = `#00${number}`;
+  if (number > 999) numberFormated = `#${number}`;
   else if (number > 99) numberFormated = `#0${number}`;
-  else if (number > 999) numberFormated = `#${number}`;
+  else if (number > 9) numberFormated = `#00${number}`;
+  
+  
 
   return `<div class="number">${numberFormated}</div>`;
 };
@@ -31,7 +33,7 @@ const pokemonToHTML = async (pokemonName) => {
   try {
     const data = await getPokemonInfo(pokemonName);
     return `
-      <li class="pokemon_card">
+      <li class="pokemon_card" style="background-color: ${colours[data.types[0].type.name]};">
         <div class="name">${data.name}</div>
           ${pokemonNumberFormat(data.id)}
         <img
