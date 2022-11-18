@@ -32,24 +32,22 @@
   <body>
     <div class="flex-container">
       <div class="flex-container_list">
-        <div class="search">
-          <input placeholder="Pokémon name"/>
+        <div id="search">
+          <input placeholder="Pokémon name" />
           <button id="search_button">Search</button>
         </div>
-        <div class="pokedex">
-          <ol id="pokemon_list">
-          </ol>
+        <div id="pokedex">
+          <ol id="pokemon_list"></ol>
         </div>
       </div>
       <div class="flex-container_info">
-         <div class="pokemon_info">
-         </div>
+        <div id="pokemon_info"></div>
       </div>
-     
     </div>
     <div class="bottom">Pokedex Project</div>
     <!--JavaScript-->
     <script src="./javascript/main.js"></script>
     <script src="./javascript/pokemonListToHTML.js"></script>
+    <script src="./javascript/pokedexLoad.js"></script>
   </body>
 </html>
